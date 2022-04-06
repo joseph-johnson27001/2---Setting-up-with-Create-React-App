@@ -5,31 +5,9 @@ import AddPlayerForm from "./AddPlayerForm";
 
 class App extends Component {
   state = {
-    players: [
-      {
-        name: "Guil",
-        score: 0,
-        id: 1,
-      },
-      {
-        name: "Treasure",
-        score: 0,
-        id: 2,
-      },
-      {
-        name: "Ashley",
-        score: 0,
-        id: 3,
-      },
-      {
-        name: "James",
-        score: 0,
-        id: 4,
-      },
-    ],
+    players: [],
   };
 
-  // Player id counter
   prevPlayerId = 4;
 
   getHighScore = () => {
@@ -87,7 +65,7 @@ class App extends Component {
             index={index}
             changeScore={this.handleScoreChange}
             removePlayer={this.handleRemovePlayer}
-            isHighScore={highScore === player.score} // is a player's 'score' prop equal to the high score?
+            isHighScore={highScore === player.score}
           />
         ))}
         <AddPlayerForm addPlayer={this.handleAddPlayer} />
